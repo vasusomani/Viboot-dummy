@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "VIT Downloads Organizer",
+  "version": "1.0",
+  "description": "Organizes VIT course downloads into structured folders",
+  "permissions": [
+    "downloads",
+    "downloads.shelf",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://vtop.vit.ac.in/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://vtop.vit.ac.in/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
